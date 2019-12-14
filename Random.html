@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    #demo{ 
+    visibility: hidden ;
+    }
+     .but{
+      color : black;
+      background-color : white ;
+      border : solid Green ;
+      padding : 5px 5px ; 
+      text-align  : center ;
+      }
+   </style>
+  </head>
+ <body>
+ Click the button to generate a random number: <br>
+ <button class = "but" onclick = "myfunction()">Generate a number </button>
+ <p id = "demo"></p>
+ <p>The number generated is hidden . Now guess the number that would be correct. Once the number guessed is correct the number that was hidden would be visible.</p>
+ Enter the number you guess  <input type = "text" id = "c"></input >
+ <button class = "but" id = "a">check</button>
+ <p id = "ab"></p>
+ <script> 
+ var x = Math.floor((Math.random() * 10) + 1);
+ var i = 1;
+ function myfunction(){
+ document.getElementById("demo").innerHTML= x; 
+ }
+ document.getElementById("a").onclick = function(){
+ check=document.getElementById("c").value;
+
+ if( check == x ){ 
+
+   document.getElementById("demo").style.visibility = "visible";
+   document.getElementById("ab").innerHTML = "Correct guess";
+   if( (10-i)>7){
+      document.getElementById("ab").innerHTML = "CORRECT GUESS. YOUR LUCK IS VERY GOOD."
+   }
+   else {
+    document.getElementById("ab").innerHTML = "CORRECT GUESS. Your luck is not so bad."
+   }
+ }
+ else if(i==10){
+   document.getElementById("ab").innerHTML= "GAME OVER. BETTER LUCK NEXT TIME. THE NUMBER ABOVE WAS THE CORRECT ANSWER";
+   document.getElementById("demo").style.visibility = "visible";
+ }
+ else {
+   document.getElementById("ab").innerHTML="Try again!!"+(10-i)+ "chances left ";
+   i++;
+ }
+}
+</script>
+
+</body>
+</html>
+
