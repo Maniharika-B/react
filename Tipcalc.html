@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+enter the number of stars of the restaurant<input type = "text" id = "r"><br><br>
+enter bill amount <input type = "text" id= "o"><br>
+<input type="radio" name="rating" value="0.30" id="m1">excellent<br>
+<input type="radio" name="rating" value="0.25" id="m2">very good<br>
+<input type="radio" name="rating" value="0.20" id="m3">good<br>
+<input type="radio" name="rating" value="0.10" id="m4">average<br>
+<input type="radio" name="rating" value="0.05" id="m5">poor <br><br>
+enter number of people sharing the bill <input type = "text" id= "mo"><br><br>
+<button onclick="myFunction()">calculate tip amount</button>
+<p id="demo"></p>
+
+
+<script>
+function myFunction() {
+var x, y, z ,res;
+ x =document.getElementById("o").value;
+ if(document.getElementById("m1").checked){
+  y=document.getElementById("m1").value;
+  }
+  else if(document.getElementById("m2").checked){
+  y=document.getElementById("m2").value;
+  }
+  else if(document.getElementById("m3").checked){
+  y=document.getElementById("m3").value;
+  }
+  else if(document.getElementById("m4").checked){
+  y=document.getElementById("m4").value;
+  }
+  else{
+  y=document.getElementById("m5").value;
+  }
+  z= document.getElementById("mo").value;
+  if(document.getElementById("r").value==5){
+  res = (x*y)/z;
+ }
+else if(document.getElementById("r").value==4){
+ res = (x*(y-0.01))/z;
+ }
+ else if(document.getElementById("r").value<=3){
+ res = (x*(y-0.03))/z;
+ }
+ else {
+ res = (x*y)/z;
+ }
+ document.getElementById("demo").innerHTML= res;
+}
+</script>
+
+</body>
+</html>
