@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-enter the number of stars of the restaurant<input type = "text" id = "r"><br><br>
+
 enter bill amount <input type = "text" id= "o"><br>
 <input type="radio" name="rating" value="0.30" id="m1">excellent<br>
 <input type="radio" name="rating" value="0.25" id="m2">very good<br>
@@ -33,18 +33,19 @@ var x, y, z ,res;
   y=document.getElementById("m5").value;
   }
   z= document.getElementById("mo").value;
-  if(document.getElementById("r").value==5){
-  res = (x*y)/z;
- }
-else if(document.getElementById("r").value==4){
- res = (x*(y-0.01))/z;
- }
- else if(document.getElementById("r").value<=3){
- res = (x*(y-0.03))/z;
- }
- else {
+ 
+ 
+ 
+
+
+ 
+
+ 
+  
+ 
+
  res = (x*y)/z;
- }
+ 
  document.getElementById("demo").innerHTML= res;
 }
 </script>
