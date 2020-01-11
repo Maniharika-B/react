@@ -49,8 +49,11 @@ var x, y, z ,res;
  res="pls enter the rating feild with value less than or equal to 5 ";
  }
 
-if(res>100){
+if(res>100 && x<1500 && z==1){
  document.getElementById("demo").innerHTML=Math.ceil(res*0.1);
+ }
+ else if(x<200){
+ document.getElementById("demo").innerHTML= Math.ceil(res*0.1);
  }
  else {
  document.getElementById("demo").innerHTML= Math.ceil(res);
